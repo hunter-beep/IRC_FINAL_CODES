@@ -11,9 +11,9 @@ BR -  D1_1
 
 Data cables
 FL  -  FLW_2
-FR -  FRW_2
+FR -  FRW_2 //Check 
 BL  -  BLW_2
-BR -  BRW_2
+BR -  BRW_2 //Check
 
 Encoder
 
@@ -53,7 +53,7 @@ STEERING
 Data cables
 FL  -  L5
 FR -  L2
-BL  -  L3
+BL  -  L3 
 BR -  L1
 
 SCIENCE
