@@ -1,0 +1,53 @@
+#include <ros.h>
+#include <geometry_msgs/Point.h>
+#include <TinyGPSPlus.h>
+
+ros::NodeHandle nh;
+
+HardwareSerial Serial1(PA3, PA2);  // Explicitly define Serial1 for USART1
+TinyGPSPlus gps;
+
+unsigned long lastUpdate = 0;
+const unsigned long updateInterval = 2000;
+
+// Create a publisher for the /gps/data topic
+geometry_msgs::Point gpsData;
+
+ros::Publisher gpsPublisher("/gps/data", &gpsData);
+
+void setup() {
+    Serial1.begin(9600);       // GPS module communication
+
+    nh.initNode();
+    nh.advertise(gpsPublisher);
+
+    // nh.loginfo("Initializing GPS...");
+    // nh.loginfo("Waiting for GPS signal...");
+}
+
+void loop() {
+    // Read data from the GPS module
+    while (Serial1.available() > 0) {
+        char c = Serial1.read();
+        gps.encode(c);
+    }
+
+    // Publish GPS data at intervals
+    if (millis() - lastUpdate >= updateInterval) {
+        lastUpdate = millis();
+
+        if (gps.location.isValid()) {
+            gpsData.x = gps.location.lat();      // Latitude
+            gpsData.y = gps.location.lng();      // Longitude
+            gpsData.z = gps.altitude.meters();   // Altitude
+
+            gpsPublisher.publish(&gpsData);
+
+            nh.loginfo("Published GPS data to /gps/data topic");
+        } 
+    }
+
+    // Handle ROS communication
+    nh.spinOnce();
+    delay(10);  // Small delay for stability
+}
