@@ -125,19 +125,19 @@ public:
                manipulator_pwm=200;
            } else if (msg->axes[1] == +1) {
                manipulator_choice = 3;
-               ROS_INFO("Motor1 Up");
+               ROS_INFO("Motor1 Up"); //check
                manipulator_pwm=230;
            } else if (msg->axes[1] ==-1) {
                manipulator_choice = 4;
-               ROS_INFO("Motor1 Down");
+               ROS_INFO("Motor1 Down"); //check 
                manipulator_pwm=230;
            } else if (msg->axes[2] == +1) {
                manipulator_choice = 5;
-               ROS_INFO("Drill Motor To Earth");
+               ROS_INFO("Drill Motor To Earth"); // check 
                manipulator_pwm=130;
            } else if (msg->axes[2] ==-1) {
                manipulator_choice = 6;
-               ROS_INFO("Drill Motor Away From Earth");
+               ROS_INFO("Drill Motor Away From Earth"); //check 
                manipulator_pwm=130;                                    
            } else if (msg->axes[0] == -1) {
                manipulator_choice = 7;
