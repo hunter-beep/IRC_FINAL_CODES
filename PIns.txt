@@ -1,0 +1,64 @@
+All pins 
+
+Drive
+We used smart elex for FR because MD10C fried up.
+
+Power pins:  
+FL  -  D2_2
+FR -  D2_1
+BL  -  D1_3
+BR -  D1_1
+
+Data cables
+FL  -  FLW_2
+FR -  FRW_2
+BL  -  BLW_2
+BR -  BRW_2
+
+Encoder
+
+Based on closeness
+FL - FRW_2
+FR - BRW_2
+BL - FLW_2
+BR - BLW_2
+
+
+
+
+
+
+
+
+
+Manipulator
+
+Power pins
+Connect to nearby manipulator power ports (All the power cables are named and length of wires has been chosen accordingly)
+
+
+
+Data cables
+M1 - ENC_BLW1, BLW1 (two pin connector, GND of three pin connector )
+M2 - MRW1
+M3 - MLW1
+M4 - BRW1
+M5 - FLW1
+M6 - FRW1
+
+
+
+STEERING
+
+Data cables
+FL  -  L5
+FR -  L2
+BL  -  L3
+BR -  L1
+
+SCIENCE
+
+LA - M2(MRW1)
+MOTOR1 -M4 (BRW1)
+MOTOR2 -M5 (FLW1)
+STEPPER - M3 (MLW1) 
