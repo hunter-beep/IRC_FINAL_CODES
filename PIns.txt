@@ -1,6 +1,9 @@
 All pins 
 
-Drive
+Pins have been rotated because of rotating PCB.
+STM was rotated because there was some issues earlier with the PCB which was resolved.
+
+Drive (Steering STM)
 We used smart elex for FR because MD10C fried up.
 
 Power pins:  
@@ -10,18 +13,18 @@ BL  -  D1_3
 BR -  D1_1
 
 Data cables
-FL  -  FLW_2
-FR -  FRW_2 //Check 
-BL  -  BLW_2
-BR -  BRW_2 //Check
+FL  -  FLW_2 PC15,PA0
+FR -  FRW_2  PB9,PB8
+BL  -  BLW_2 PA5,PA6
+BR -  BRW_2 PB15,PB14
 
 Encoder
 
 Based on closeness
-FL - FRW_2
-FR - BRW_2
-BL - FLW_2
-BR - BLW_2
+FL - FRW_2 PB9,PB8
+FR - BRW_2 PB15,PB14
+BL - FLW_2 PC15,PA0
+BR - BLW_2 PA5,PA6
 
 
 
@@ -31,32 +34,32 @@ BR - BLW_2
 
 
 
-Manipulator
+Manipulator (Drive STM)
 
 Power pins
 Connect to nearby manipulator power ports (All the power cables are named and length of wires has been chosen accordingly)
 
 
 
+Data cables  (DIR,PWM)
+M1 - ENC_BLW1, BLW1 (two pin connector, GND of three pin connector ) PA7,PB0  ,GND of BLW1
+M2 - MRW1 - PB5 , PB4
+M3 - MLW1 - PA1,PA2
+M4 - BRW1 - PB15,PB14
+M5 - FLW1 - PC15,PA0
+M6 - FRW1 - PB9,PB8
+
+
+
+STEERING (Manipulator STM)
+
 Data cables
-M1 - ENC_BLW1, BLW1 (two pin connector, GND of three pin connector )
-M2 - MRW1
-M3 - MLW1
-M4 - BRW1
-M5 - FLW1
-M6 - FRW1
+FL  -  L5 PB9,PB8
+FR -  L2  PA1,PA2
+BL  -  L3 PA5,PA6
+BR -  L1  PC15,PA0
 
-
-
-STEERING
-
-Data cables
-FL  -  L5
-FR -  L2
-BL  -  L3 
-BR -  L1
-
-SCIENCE
+SCIENCE  (Drive STM)
 
 LA - M2(MRW1)
 MOTOR1 -M4 (BRW1)
