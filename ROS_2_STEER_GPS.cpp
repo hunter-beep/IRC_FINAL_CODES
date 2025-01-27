@@ -95,7 +95,7 @@ ros::Subscriber<std_msgs::Int16> steer_sub("/rover/steer", commandCallback);
 
 // ------------------- GPS System ------------------- //
 
-HardwareSerial Serial1(PB7, PB6); // GPS communication
+HardwareSerial Serial1(PB7, PB6); // GPS communication (RX,TX)
 TinyGPSPlus gps;
 
 unsigned long lastUpdate = 0;
