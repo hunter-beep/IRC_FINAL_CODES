@@ -235,19 +235,19 @@ void loop()
   if (target_angle - 5 > current_angle)
   {
     spotturn();
-    motorFRS.pwm(input_pwm*2);
-    motorBRS.pwm(input_pwm*2);
-    motorFLS.pwm(input_pwm*2);
-    motorBLS.pwm(input_pwm*2);
+    motorFRS.pwm(input_pwm);
+    motorBRS.pwm(input_pwm);
+    motorFLS.pwm(input_pwm);
+    motorBLS.pwm(input_pwm);
     delay(10);
     current_angle += millis() - present_angle;
   } else if (target_angle + 5 < current_angle)
   {
     spotturnrev();
-    motorFRS.pwm(input_pwm*2);
-    motorBRS.pwm(input_pwm*2);
-    motorFLS.pwm(input_pwm*2);
-    motorBLS.pwm(input_pwm*2);
+    motorFRS.pwm(input_pwm);
+    motorBRS.pwm(input_pwm);
+    motorFLS.pwm(input_pwm);
+    motorBLS.pwm(input_pwm);
     delay(10);
     current_angle -= millis() - present_angle;
   } else
