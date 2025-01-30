@@ -130,11 +130,11 @@ public:
            } else if (msg->axes[2] == +1) {
                manipulator_choice = 5;
                ROS_INFO("Manipulator: Belt Up");
-               manipulator_pwm = 160;
+               manipulator_pwm = 90;
            } else if (msg->axes[2] ==-1) {
                manipulator_choice = 6;
                ROS_INFO("Manipulator: Belt Down"); 
-               manipulator_pwm = 160;                                   
+               manipulator_pwm = 90;                                   
            } else if (msg->axes[0] == -1) {
                manipulator_choice = 8;
                ROS_INFO("Manipulator: Base Right");
@@ -147,12 +147,12 @@ public:
             else if(msg->axes[6]== +1){
             manipulator_choice = 9;
             ROS_INFO("Manipulator: Bevel_gear Left");
-            manipulator_pwm = 160;
+            manipulator_pwm = 90;
            }
            else if(msg->axes[6]== -1){
             manipulator_choice = 10;
             ROS_INFO("Manipulator: Bevel_gear Right");
-            manipulator_pwm = 160;
+            manipulator_pwm = 90;
            }
            else if(msg->axes[7]== +1){
             manipulator_choice = 11;
