@@ -66,7 +66,7 @@ public:
            drive_speed = std::min(drive_speed + 5, 255);
            ROS_INFO("Drive: Increase Speed: %d", drive_speed);
        }else if ((msg->buttons[6] == 1) && (msg->buttons[7] == 1)){ //steer code starts
-       
+       		//**Spot Turn Rev
               steer_msg.data = 5;
             ROS_INFO("both wheels left"); //left
             }else if ((msg->buttons[8] == 1) && (msg->buttons[9] == 1)){
@@ -80,7 +80,7 @@ public:
             ROS_INFO("right wheel right"); //right
             
             }else if(msg->buttons[7] == 1){
-            
+            //**Spot Turn
             steer_msg.data = 1;
             ROS_INFO("right wheel left"); //left
             
