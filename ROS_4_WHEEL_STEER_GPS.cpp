@@ -145,7 +145,7 @@ void commandCallback(const std_msgs::Int16& msg) {
     //   }
     //   break;
 
-     case 2:
+     case 5:
         target_angle = 0;
         break;
     //   frontsteerR();
@@ -256,7 +256,9 @@ void loop()
     done();
   }
 
-
+if(!nh.connected()){
+  done();
+}
 
 
    // Read GPS data
